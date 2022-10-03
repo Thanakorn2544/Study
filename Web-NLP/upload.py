@@ -20,7 +20,7 @@ app = Flask(__name__)
 Markdown(app)
 app.config["UPLOAD_PATH"] = f"{str(pathlib.Path(__file__).parent.resolve().as_posix())}/uploads/"
 # สามารถแก้ขนาด Model SpyCy ได้ที่ตรงนี้ nlp = spacy.load("แก้ขนาดตรงส่วนนี้")
-nlp = spacy.load("en_core_web_lg") #en_core_web_lg(560MB), en_core_web_md(40MB), en_core_web_sm(12MB)
+nlp = spacy.load("en_core_web_sm") #en_core_web_lg(560MB), en_core_web_md(40MB), en_core_web_sm(12MB)
 bo = False
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -128,4 +128,4 @@ def search_word():
 	return render_template("index.html",top_word = sorted_word_count[:5],dictionary = dictionary,bool_search = bool_search,result_word = result_word, key_word = key_word, top_tfidf = top_tfidf,result_spy = result_spy, bo = bo)
 
 if __name__ == "__main__":
-	app.run(debug=True)
+	app.run(host="0.0.0.0", port=80)

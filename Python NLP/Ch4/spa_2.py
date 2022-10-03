@@ -1,6 +1,6 @@
 import spacy
 
-f = open('../Ch4/tim_cook.txt', 'r')
+f = open('d:/Code/Python NLP/Ch4/tim_cook.txt', 'r')
 article = f.read()
 
 # Instantiate the English model: nlp
@@ -11,4 +11,5 @@ doc = nlp(article)
 
 # Print all of the found entities and their labels
 for ent in doc.ents:
-    print(ent.label_, ent.text)
+    if (ent.label_ == "ORG") :
+        print(ent.label_, ent.text)

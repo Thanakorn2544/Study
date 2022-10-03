@@ -5,7 +5,7 @@ print(re.match('abcd', 'abcdef'))
 print(re.search('abcd', 'abcdef'))
 #นับตัวแรกตัวไหนก้ได้ไล่ไปจนตัวสุดท้ายที่เจอ
 
-word_regex = '\w+'
+word_regex = r'\w+'
 print(re.match(word_regex, 'hi theae!'))
 #คือเอาแค่คำภาาาอังกฤษแบบไม่มีตัวเลขหรือตัวอักษรติดมาเลย
 

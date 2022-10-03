@@ -2,6 +2,7 @@
 # Web
 pip install Flask
 pip install markdown
+pip install Flask-Markdown
 # NLP
 pip install gensim
 pip install nltk
